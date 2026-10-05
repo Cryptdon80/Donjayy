@@ -4,56 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lagos Creative Studio</title>
-
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #111;
-      color: #fff;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #ff6b00, #ff006e);
+    }
+
+    h1 {
+      font-size: 45px;
+      margin: 0 0 15px;
+    }
+
+    p {
+      font-size: 18px;
       line-height: 1.6;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 7%;
-      background: #111;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    section {
+      padding: 50px 20px;
     }
 
-    .logo {
-      font-size: 22px;
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 25px;
+      background: white;
+      color: #111;
+      text-decoration: none;
+      border-radius: 30px;
       font-weight: bold;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
+    footer {
+      padding: 25px;
+      background: #000;
     }
+  </style>
+</head>
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      padding: 80px 7%;
-      background: linear-gradient(135deg, #111, #242424);
-    }
+<body>
 
-    .hero-content {
-      max-width: 800px;
-    }
+  <header>
+    <h1>Lagos Creative Studio</h1>
+    <p>Creative ideas. Bold designs. Digital experiences.</p>
+    <a class="button" href="#contact">Work With Us</a>
+  </header>
 
-    .tag {
-      color: #f5c542;
-     
+  <section>
+    <h2>What We Do</h2>
+    <p>
+      We create beautiful websites, branding and digital content
+      for businesses, creators and brands.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Let's Create Something Great</h2>
+    <p>Ready to bring your idea to life?</p>
+    <a class="button" href="mailto:hello@example.com">Contact Us</a>
+  </section>
+
+  <footer>
+    © 2026 Lagos Creative Studio
+  </footer>
+
+</body>
+</html>

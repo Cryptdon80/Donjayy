@@ -571,56 +571,83 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
 </section>
 
 <section id="portfolio">
+
   <div class="section-heading">
     <span class="section-label">SELECTED WORK</span>
     <h2>Work that speaks<br><span>for itself.</span></h2>
     <p>Real Web3, research, business development and creative work.</p>
   </div>
 
-  <div class="work-grid">
+  <div class="portfolio-carousel">
 
-    <div class="work-item">
-      <div class="work-image">
-        <img src="WA_1791240066463.jpeg" alt="Midnight Nightforce work preview">
-      </div>
+    <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous project">
+      ‹
+    </button>
 
-      <div class="work-content">
-        <span class="work-number">01</span>
-        <h3>Midnight — Nightforce Ambassador</h3>
-        <p>
-          Applied to Midnight's Nightforce Ambassador program,
-          contributing to the growth, education and adoption of
-          privacy-focused blockchain technology.
-        </p>
-        <div class="work-tags">
-          <span>WEB3</span>
-          <span>BLOCKCHAIN</span>
-          <span>COMMUNITY</span>
+    <div class="portfolio-track">
+
+      <div class="portfolio-slide active">
+        <div class="work-item">
+
+          <div class="work-image">
+            <img src="WA_1791240066463.jpeg" alt="Midnight Nightforce work preview">
+          </div>
+
+          <div class="work-content">
+            <span class="work-number">01</span>
+
+            <h3>Midnight — Nightforce Ambassador</h3>
+
+            <p>
+              Applied to Midnight's Nightforce Ambassador program,
+              contributing to the growth, education and adoption of
+              privacy-focused blockchain technology.
+            </p>
+
+            <div class="work-tags">
+              <span>WEB3</span>
+              <span>BLOCKCHAIN</span>
+              <span>COMMUNITY</span>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
 
 
-    <div class="work-item">
-      <div class="work-image">
-        <img src="WA_1791240041321.jpeg" alt="Victus Global business development work preview">
-      </div>
+      <div class="portfolio-slide">
+        <div class="work-item">
 
-      <div class="work-content">
-        <span class="work-number">02</span>
-        <h3>Victus Global — Business Development</h3>
-        <p>
-          Selected to move forward for a Senior Business Developer
-          opportunity focused on partnerships, business development
-          and growth initiatives.
-        </p>
-        <div class="work-tags">
-          <span>BUSINESS DEVELOPMENT</span>
-          <span>PARTNERSHIPS</span>
-          <span>GROWTH</span>
+          <div class="work-image">
+            <img src="WA_1791240041321.jpeg" alt="Victus Global business development work preview">
+          </div>
+
+          <div class="work-content">
+            <span class="work-number">02</span>
+
+            <h3>Victus Global — Business Development</h3>
+
+            <p>
+              Selected to move forward for a Senior Business Developer
+              opportunity focused on partnerships, business development
+              and growth initiatives.
+            </p>
+
+            <div class="work-tags">
+              <span>BUSINESS DEVELOPMENT</span>
+              <span>PARTNERSHIPS</span>
+              <span>GROWTH</span>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
+
+    <button class="carousel-arrow carousel-next" type="button" aria-label="Next project">
+      ›
+    </button>
 
   </div>
 
@@ -932,63 +959,211 @@ section > div:hover {
     margin: 0;
     opacity: 0.75;
 }
-.work-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-top: 35px;
+/* ===== PORTFOLIO CAROUSEL ===== */
+
+.portfolio-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 45px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 55px;
 }
 
-.work-item {
+.portfolio-track {
     position: relative;
+    width: 100%;
+    min-height: 650px;
+}
+
+.portfolio-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(90px) scale(0.88);
+    z-index: 1;
+    pointer-events: none;
+    transition:
+        transform 0.55s ease,
+        opacity 0.55s ease;
+}
+
+.portfolio-slide.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.portfolio-slide.previous {
+    opacity: 0.45;
+    transform: translateX(-70px) scale(0.90);
+    z-index: 2;
+}
+
+
+/* PROJECT CARD */
+
+.portfolio-slide .work-item {
+    width: 100%;
     overflow: hidden;
     padding: 0;
-    min-height: 0;
-    border: 1px solid rgba(0,217,255,0.18);
-    border-radius: 24px;
+    border: 1px solid rgba(0,217,255,0.25);
+    border-radius: 28px;
     background: linear-gradient(
         145deg,
-        rgba(0,217,255,0.06),
-        rgba(0,0,0,0.35)
+        rgba(0,217,255,0.07),
+        rgba(0,0,0,0.55)
     );
-    transition: 0.3s ease;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.35);
 }
 
-.work-item:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0,217,255,0.55);
-    box-shadow: 0 18px 50px rgba(0,217,255,0.12);
-}
 
-.work-image {
+/* FULL IMAGE */
+
+.portfolio-slide .work-image {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 360px;
     overflow: hidden;
     background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.work-image img {
+.portfolio-slide .work-image img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    background: #000;
     border-radius: 0;
-    transition: transform 0.4s ease;
 }
 
-.work-item:hover .work-image img {
-    transform: scale(1.04);
+
+/* PROJECT INFORMATION */
+
+.portfolio-slide .work-content {
+    padding: 30px;
 }
 
-.work-content {
-    padding: 26px;
+.portfolio-slide .work-number {
+    display: block;
+    color: #00d9ff;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
 
-.work-tags {
+.portfolio-slide .work-item h3 {
+    font-size: 26px;
+    line-height: 1.25;
+    margin: 0 0 15px;
+}
+
+.portfolio-slide .work-item p {
+    opacity: 0.75;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* TAGS */
+
+.portfolio-slide .work-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
+
+.portfolio-slide .work-tags span {
+    padding: 8px 12px;
+    border: 1px solid rgba(0,217,255,0.25);
+    border-radius: 999px;
+    color: #00d9ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+
+/* ARROWS */
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,217,255,0.5);
+    background: rgba(2,8,23,0.9);
+    color: #00d9ff;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-arrow:hover {
+    background: #00d9ff;
+    color: #020817;
+    box-shadow: 0 0 25px rgba(0,217,255,0.45);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .portfolio-carousel {
+        padding: 0 12px;
+    }
+
+    .portfolio-track {
+        min-height: 690px;
+    }
+
+    .portfolio-slide .work-image {
+        height: 300px;
+    }
+
+    .portfolio-slide .work-content {
+        padding: 24px;
+    }
+
+    .portfolio-slide .work-item h3 {
+        font-size: 22px;
+    }
+
+    .carousel-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 28px;
+    }
+
+    .carousel-prev {
+        left: -4px;
+    }
+
+    .carousel-next {
+        right: -4px;
+    }
+ }
 
 .work-tags span {
     padding: 7px 11px;
@@ -1183,5 +1358,38 @@ document.addEventListener("click", function(e) {
   }, 600);
 });
   </script>
+ <script>
+const slides = document.querySelectorAll('.portfolio-slide');
+const nextButton = document.querySelector('.carousel-next');
+const prevButton = document.querySelector('.carousel-prev');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'previous');
+
+        if (i === index) {
+            slide.classList.add('active');
+        }
+
+        if (i === (index - 1 + slides.length) % slides.length) {
+            slide.classList.add('previous');
+        }
+    });
+}
+
+nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+});
+
+prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+});
+
+showSlide(currentSlide);
+ </script>
 </body>
 </html>

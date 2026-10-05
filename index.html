@@ -1,80 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DoNjayy Creative Studio</title>
+  <title>DoNjayy | Web3 & AI Creator</title>
+
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
+      background: #020817;
       color: white;
-      text-align: center;
     }
 
     header {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #ff6b00, #ff006e);
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #12304d;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #19bfff;
+    }
+
+    .hero {
+      padding: 70px 25px;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #19bfff;
+      box-shadow: 0 0 35px #008cff;
     }
 
     h1 {
       font-size: 45px;
-      margin: 0 0 15px;
+      margin: 25px 0 10px;
     }
 
-    p {
+    h1 span { color: #19bfff; }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      color: #b8c7d9;
       font-size: 18px;
       line-height: 1.6;
     }
 
-    section {
-      padding: 50px 20px;
+    .buttons {
+      margin-top: 30px;
     }
 
-    .button {
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 15px 25px;
-      background: white;
-      color: #111;
-      text-decoration: none;
+      padding: 14px 22px;
+      margin: 6px;
+      border: 1px solid #19bfff;
       border-radius: 30px;
-      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      background: #19bfff;
+      color: #00111f;
+    }
+
+    section {
+      padding: 50px 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: #071426;
+      border: 1px solid #12304d;
+      border-radius: 20px;
+      padding: 25px;
+      margin: 15px 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #19bfff;
     }
 
     footer {
-      padding: 25px;
-      background: #000;
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #12304d;
+      color: #8ca3bb;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-<h1>DoNjayy Creative Studio</h1>
-    <p>Creative ideas. Bold designs. Digital experiences.</p>
-    <a class="button" href="#contact">Work With Us</a>
-  </header>
+<header>
+  <div class="logo">DoNjayy</div>
+  <a class="btn" href="#contact">Hire Me</a>
+</header>
 
-  <section>
-    <h2>What We Do</h2>
+<div class="hero">
+
+  <img src="5X1DlH3I%20(1).jpg" alt="DoNjayy">
+
+  <h1>Hi, I'm <span>DoNjayy</span></h1>
+
+  <p>
+    Content creator creating content for AI and DeFi projects.
+    Web developer, AI content writer, AI image expert and crypto researcher.
+  </p>
+
+  <div class="buttons">
+    <a class="btn" href="https://x.com/Altjayy_">X</a>
+    <a class="btn" href="https://t.me/cryptdon80">Telegram</a>
+    <a class="btn" href="mailto:stillj046@gmail.com">Contact Me</a>
+  </div>
+
+</div>
+
+<section>
+  <div class="card">
+    <h2>About Me</h2>
     <p>
-      We create beautiful websites, branding and digital content
-      for businesses, creators and brands.
+      I create digital content and solutions around AI, Web3 and DeFi.
+      My goal is to deliver apex services and customer satisfaction.
     </p>
-  </section>
+  </div>
 
-  <section id="contact">
-    <h2>Let's Create Something Great</h2>
-    <p>Ready to bring your crypto idea to life?</p>
-    <a class="button" href="mailto:hello@example.com">Contact Us</a>
-  </section>
+  <div class="card">
+    <h2>My Skills</h2>
+    <p>Web Development • AI Content Writing • AI Images • Crypto Research • DeFi • Content Creation</p>
+  </div>
 
-  <footer>
-    © 2026 DoNjayy Creative Studio
-  </footer>
+  <div class="card">
+    <h2>Crypto & Web3</h2>
+    <p>
+      Explore crypto, DeFi, blockchain and beginner-friendly guides.
+      Live market data and interactive charts will be added here.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Let's Work Together</h2>
+    <p>Need a creative mind for your AI, Web3 or DeFi project?</p>
+    <a class="btn" href="mailto:stillj046@gmail.com">Hire DoNjayy</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 DoNjayy — Web3 & AI Creator
+</footer>
 
 </body>
 </html>

@@ -437,6 +437,8 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     <a class="btn" href="#portfolio">View My Work</a>
     <a class="btn" href="mailto:stillj046@gmail.com">Let's Work Together</a>
 </div>
+</div>
+<section>
 <section>
 <div class="card about-card">
     <span class="section-label">ABOUT ME</span>
@@ -571,8 +573,7 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
   </div>
 </section>
 
-<<section id="portfolio">
-
+<section id="portfolio">
   <div class="section-heading">
     <span class="section-label">SELECTED WORK</span>
     <h2>Work that speaks<br><span>for itself.</span></h2>
@@ -938,27 +939,72 @@ section > div:hover {
     margin: 0;
     opacity: 0.75;
 }
-
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 25px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 35px;
 }
 
 .work-item {
     position: relative;
-    padding: 25px;
-    min-height: 220px;
+    overflow: hidden;
+    padding: 0;
+    min-height: 0;
     border: 1px solid rgba(0,217,255,0.18);
-    border-radius: 20px;
-    background: rgba(0,0,0,0.25);
-    transition: 0.25s ease;
+    border-radius: 24px;
+    background: linear-gradient(
+        145deg,
+        rgba(0,217,255,0.06),
+        rgba(0,0,0,0.35)
+    );
+    transition: 0.3s ease;
 }
 
 .work-item:hover {
     transform: translateY(-6px);
-    border-color: #00d9ff;
+    border-color: rgba(0,217,255,0.55);
+    box-shadow: 0 18px 50px rgba(0,217,255,0.12);
+}
+
+.work-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #000;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.4s ease;
+}
+
+.work-item:hover .work-image img {
+    transform: scale(1.04);
+}
+
+.work-content {
+    padding: 26px;
+}
+
+.work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.work-tags span {
+    padding: 7px 11px;
+    border: 1px solid rgba(0,217,255,0.2);
+    border-radius: 999px;
+    color: #00d9ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
 }
 
 .work-number {

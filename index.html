@@ -833,18 +833,11 @@ async function loadCryptoPrices() {
 )?.closest(".crypto-coin")
   ?.querySelector(".coin-symbol");
 
-const cryptoLogos = {
-  bitcoin: "https://cdn.simpleicons.org/bitcoin/F7931A",
-  ethereum: "https://cdn.simpleicons.org/ethereum/627EEA",
-  solana: "https://cdn.simpleicons.org/solana/14F195",
-  binancecoin: "https://cdn.simpleicons.org/binance/000000",
-  ripple: "https://cdn.simpleicons.org/ripple/FFFFFF"
-};
-
-if (symbol && cryptoLogos[coin.id]) {
-  symbol.innerHTML = `
-    <img src="${cryptoLogos[coin.id]}" alt="${coin.name} logo">
-  `;
+if (symbol && coin.image) {
+    symbol.innerHTML = `
+      <img src="${coin.image}" alt="${coin.name} logo">
+    `;
+}
   }
   }
 

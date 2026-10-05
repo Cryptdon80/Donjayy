@@ -756,6 +756,28 @@ section > div:hover {
   }
 
   }
+  .coin-symbol {
+  overflow: hidden;
+  background: rgba(255,255,255,0.18) !important;
+}
+
+.coin-symbol img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+  .coin-symbol {
+  overflow: hidden;
+  background: rgba(255,255,255,0.18) !important;
+}
+
+.coin-symbol img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  }
 </style>
 
 <script>
@@ -793,6 +815,16 @@ async function loadCryptoPrices() {
     data.forEach(coin => {
       const price = document.getElementById(coins[coin.id].price);
       const change = document.getElementById(coins[coin.id].change);
+      const symbol = document.querySelector(
+  `#${coins[coin.id].price}`
+)?.closest(".crypto-coin")
+  ?.querySelector(".coin-symbol");
+
+if (symbol && coin.image) {
+  symbol.innerHTML = `
+    <img src="${coin.image}" alt="${coin.name} logo">
+  `;
+  }
 
       if (price) {
         price.textContent = "$" + coin.current_price.toLocaleString();

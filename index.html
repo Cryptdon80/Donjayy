@@ -144,13 +144,13 @@
 
   <div class="card">
     <h2>My Skills</h2>
-    <p>Web Development • AI Content Writing • AI Images • Crypto Research • DeFi • Content Creation</p>
+    <p>Web Development • AI Content Writing • AI Images expert • Crypto Research • DeFi • Content Creation</p>
   </div>
 
   <div class="card">
     <h2>Crypto & Web3</h2>
     <p>
-      Explore crypto, DeFi, blockchain and beginner-friendly guides.
+      Explore crypto, DeFi, blockchain and beginner friendly guides.
       Live market data and interactive charts will be added here.
     </p>
   </div>
@@ -167,6 +167,73 @@
 <footer>
   © 2026 DoNjayy — Web3 & AI Creator
 </footer>
+<style>
+/* 🔵 DoNjayy Bubble Effects */
 
+button, a {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover, a:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.45);
+}
+
+button:active, a:active {
+  transform: scale(0.92);
+  box-shadow: 0 0 35px rgba(0, 191, 255, 0.8);
+}
+
+/* Ripple */
+.ripple {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+  animation: rippleEffect 0.6s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes rippleEffect {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(7);
+  }
+}
+
+/* Cards pop slightly when touched */
+section > div {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(0, 191, 255, 0.15);
+}
+</style>
+
+<script>
+document.addEventListener("click", function(e) {
+  const ripple = document.createElement("span");
+  ripple.className = "ripple";
+  ripple.style.left = e.clientX + "px";
+  ripple.style.top = e.clientY + "px";
+
+  document.body.appendChild(ripple);
+
+  setTimeout(() => {
+    ripple.remove();
+  }, 600);
+});
+  </script>
 </body>
 </html>

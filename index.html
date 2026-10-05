@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -424,35 +424,61 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
 
   <img src="5X1DlH3I%20(1).jpg" alt="DoNjayy">
 
-  <h1>Hi, I'm <span>DoNjayy</span></h1>
+<div class="hero-badge">AI • WEB3 • CONTENT • DEVELOPMENT</div>
 
-  <p>
-    Content creator creating content for AI and DeFi projects.
-    Web developer, AI content writer, AI image expert and crypto researcher.
-  </p>
+<h1>I create, research & build at the intersection of <span>AI and Web3.</span></h1>
 
-  <div class="buttons">
-    <a class="btn" href="https://x.com/Altjayy_">X</a>
-    <a class="btn" href="https://t.me/cryptdon80">Telegram</a>
-    <a class="btn" href="mailto:stillj046@gmail.com">Contact Me</a>
-  </div>
+<p>
+    I'm DoNjayy — a content creator, AI researcher, Web3 researcher and developer
+    creating useful digital experiences, content and solutions for the next generation of the internet.
+</p>
 
+<div class="buttons">
+    <a class="btn" href="#portfolio">View My Work</a>
+    <a class="btn" href="mailto:stillj046@gmail.com">Let's Work Together</a>
 </div>
-
 <section>
-  <div class="card">
-    <h2>About Me</h2>
+<div class="card about-card">
+    <span class="section-label">ABOUT ME</span>
+    <h2>Turning ideas into <span>useful digital experiences.</span></h2>
+
     <p>
-      I create digital content and solutions around AI, Web3 and DeFi.
-      My goal is to deliver apex services and customer satisfaction.
+        I'm DoNjayy, a content creator and builder focused on AI, Web3 and emerging technology.
+        I combine research, writing, visual creativity and web development to turn complex ideas
+        into content and digital experiences people can actually understand and use.
     </p>
-  </div>
 
-  <div class="card">
-    <h2>My Skills</h2>
-    <p>Web Development • AI Content Writing • AI Images expert • Crypto Research • DeFi • Content Creation</p>
-  </div>
+    <p>
+        I'm constantly learning, experimenting and building — with a focus on delivering
+        quality work and creating real value for the people and projects I work with.
+    </p>
+</div>
+<div class="card skills-card">
+    <span class="section-label">WHAT I DO</span>
+    <h2>Skills that turn <span>ideas into reality.</span></h2>
 
+    <div class="skills-list">
+        <div class="skill-item">
+            <strong>Web Development</strong>
+            <p>Building responsive, modern websites and digital experiences.</p>
+        </div>
+
+        <div class="skill-item">
+            <strong>AI Content Writing</strong>
+            <p>Creating clear, engaging content around AI and emerging technology.</p>
+        </div>
+
+        <div class="skill-item">
+            <strong>AI Image Creation</strong>
+            <p>Creating visual concepts and AI-generated imagery for digital content.</p>
+        </div>
+
+        <div class="skill-item">
+            <strong>Crypto & Web3 Research</strong>
+            <p>Researching protocols, markets, DeFi and the evolving Web3 ecosystem.</p>
+        </div>
+    </div>
+</div>
 <div class="card crypto-card-section" id="crypto">
   <div class="crypto-heading">
     <span>₿ LIVE MARKET</span>
@@ -546,6 +572,46 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
 </section>
 
 <section id="contact">
+  <section id="portfolio">
+    <div class="card">
+        <span class="section-label">SELECTED WORK</span>
+        <h2>Things I'm <span>building.</span></h2>
+
+        <div class="work-grid">
+
+            <div class="work-item">
+                <span class="work-number">01</span>
+                <h3>DoNjayy Portfolio</h3>
+                <p>
+                    A personal portfolio built to showcase my work across AI,
+                    Web3, content creation and development.
+                </p>
+                <span class="work-tag">WEB DEVELOPMENT</span>
+            </div>
+
+            <div class="work-item">
+                <span class="work-number">02</span>
+                <h3>Crypto Market Dashboard</h3>
+                <p>
+                    A live crypto interface featuring market prices,
+                    market movement and Bitcoin data.
+                </p>
+                <span class="work-tag">CRYPTO • WEB3</span>
+            </div>
+
+            <div class="work-item">
+                <span class="work-number">03</span>
+                <h3>AI & Web3 Research</h3>
+                <p>
+                    Research, writing and educational content exploring
+                    AI, DeFi, crypto and emerging technology.
+                </p>
+                <span class="work-tag">RESEARCH • CONTENT</span>
+            </div>
+
+        </div>
+    </div>
+  </section>
   <div class="card">
     <h2>Let's Work Together</h2>
     <p>Need a creative mind for your AI, Web3 or DeFi project?</p>
@@ -791,6 +857,109 @@ section > div:hover {
   object-fit: contain;
   display: block;
   }
+  .section-label {
+    display: inline-block;
+    color: #00d9ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.about-card h2,
+.skills-card h2,
+.work-item h3 {
+    margin-bottom: 15px;
+}
+
+.about-card h2 span,
+.skills-card h2 span {
+    color: #00d9ff;
+}
+
+.skills-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.skill-item {
+    padding: 18px;
+    border: 1px solid rgba(0,217,255,0.15);
+    border-radius: 16px;
+    background: rgba(0,0,0,0.2);
+    transition: 0.25s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,217,255,0.5);
+}
+
+.skill-item strong {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.skill-item p {
+    margin: 0;
+    opacity: 0.75;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.work-item {
+    position: relative;
+    padding: 25px;
+    min-height: 220px;
+    border: 1px solid rgba(0,217,255,0.18);
+    border-radius: 20px;
+    background: rgba(0,0,0,0.25);
+    transition: 0.25s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-6px);
+    border-color: #00d9ff;
+}
+
+.work-number {
+    display: block;
+    color: #00d9ff;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+.work-item h3 {
+    font-size: 21px;
+}
+
+.work-item p {
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+.work-tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #00d9ff;
+}
+
+@media (max-width: 800px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 
 <script>

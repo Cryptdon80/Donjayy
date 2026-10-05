@@ -147,100 +147,96 @@
     <p>Web Development • AI Content Writing • AI Images expert • Crypto Research • DeFi • Content Creation</p>
   </div>
 
-<div class="card crypto-card-section">
-
+<div class="card crypto-card-section" id="crypto">
   <div class="crypto-heading">
     <span>₿ LIVE MARKET</span>
     <h2>Crypto & Web3</h2>
-    <p>
-      Explore crypto, DeFi, blockchain and Web3.
-      Real-time market data and interactive charts will be connected here.
-    </p>
+    <p>Live crypto prices, market movement and Bitcoin chart.</p>
   </div>
 
   <div class="crypto-grid">
 
-    <div class="crypto-coin">
+    <div class="crypto-coin btc">
       <div class="coin-symbol">₿</div>
       <div class="coin-info">
         <h3>Bitcoin</h3>
         <p>BTC</p>
       </div>
       <div class="coin-price">
-        <strong>$--,---</strong>
-        <span>Live soon</span>
+        <strong id="btc-price">Loading...</strong>
+        <span id="btc-change">--</span>
       </div>
     </div>
 
-    <div class="crypto-coin">
+    <div class="crypto-coin eth">
       <div class="coin-symbol">Ξ</div>
       <div class="coin-info">
         <h3>Ethereum</h3>
         <p>ETH</p>
       </div>
       <div class="coin-price">
-        <strong>$--,---</strong>
-        <span>Live soon</span>
+        <strong id="eth-price">Loading...</strong>
+        <span id="eth-change">--</span>
       </div>
     </div>
 
-    <div class="crypto-coin">
+    <div class="crypto-coin sol">
       <div class="coin-symbol">◎</div>
       <div class="coin-info">
         <h3>Solana</h3>
         <p>SOL</p>
       </div>
       <div class="coin-price">
-        <strong>$---</strong>
-        <span>Live soon</span>
+        <strong id="sol-price">Loading...</strong>
+        <span id="sol-change">--</span>
       </div>
     </div>
 
-    <div class="crypto-coin">
-      <div class="coin-symbol">BNB</div>
+    <div class="crypto-coin bnb">
+      <div class="coin-symbol">◆</div>
       <div class="coin-info">
         <h3>BNB</h3>
         <p>BNB</p>
       </div>
       <div class="coin-price">
-        <strong>$---</strong>
-        <span>Live soon</span>
+        <strong id="bnb-price">Loading...</strong>
+        <span id="bnb-change">--</span>
       </div>
     </div>
 
-    <div class="crypto-coin">
-      <div class="coin-symbol">X</div>
+    <div class="crypto-coin xrp">
+      <div class="coin-symbol">✕</div>
       <div class="coin-info">
         <h3>XRP</h3>
         <p>XRP</p>
       </div>
       <div class="coin-price">
-        <strong>$---</strong>
-        <span>Live soon</span>
+        <strong id="xrp-price">Loading...</strong>
+        <span id="xrp-change">--</span>
       </div>
     </div>
 
   </div>
 
-  <div class="chart-box">
-
+  <div class="crypto-chart">
     <div class="chart-top">
       <div>
-        <small>BTC / USD</small>
-        <h3>Bitcoin Market Chart</h3>
+        <span>BTC / USD</span>
+        <h3>Bitcoin — 24H</h3>
       </div>
-
-      <span class="chart-status">LIVE DATA</span>
+      <span class="live-dot">● LIVE</span>
     </div>
 
-    <div class="chart-area">
-      <div class="chart-line"></div>
-      <p>Real market chart coming next...</p>
+    <div id="btc-chart">
+      Loading chart...
     </div>
-
   </div>
 
-</div>
+  <p class="crypto-credit">
+    Market data provided by
+    <a href="https://www.coingecko.com/en/api" target="_blank">CoinGecko</a>
+  </p>
+  </div>
 </section>
 
 <section id="contact">
@@ -470,6 +466,64 @@ section > div:hover {
 </style>
 
 <script>
+  const coins = {
+  bitcoin: {
+    price: "btc-price",
+    change: "btc-change"
+  },
+  ethereum: {
+    price: "eth-price",
+    change: "eth-change"
+  },
+  solana: {
+    price: "sol-price",
+    change: "sol-change"
+  },
+  binancecoin: {
+    price: "bnb-price",
+    change: "bnb-change"
+  },
+  ripple: {
+    price: "xrp-price",
+    change: "xrp-change"
+  }
+};
+
+async function loadCryptoPrices() {
+  try {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,solana,binancecoin,ripple&price_change_percentage=24h"
+    );
+
+    const data = await response.json();
+
+    data.forEach(coin => {
+      const price = document.getElementById(coins[coin.id].price);
+      const change = document.getElementById(coins[coin.id].change);
+
+      if (price) {
+        price.textContent = "$" + coin.current_price.toLocaleString();
+      }
+
+      if (change) {
+        const percent = coin.price_change_percentage_24h || 0;
+        change.textContent =
+          (percent >= 0 ? "▲ " : "▼ ") +
+          Math.abs(percent).toFixed(2) +
+          "%";
+
+        change.style.color = percent >= 0 ? "#00ff9d" : "#ff4d6d";
+      }
+    });
+
+  } catch (error) {
+    console.log("Crypto price error:", error);
+  }
+}
+
+loadCryptoPrices();
+
+setInterval(loadCryptoPrices, 60000);
 document.addEventListener("click", function(e) {
   const ripple = document.createElement("span");
   ripple.className = "ripple";

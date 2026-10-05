@@ -147,13 +147,100 @@
     <p>Web Development • AI Content Writing • AI Images expert • Crypto Research • DeFi • Content Creation</p>
   </div>
 
-  <div class="card">
+<div class="card crypto-card-section">
+
+  <div class="crypto-heading">
+    <span>₿ LIVE MARKET</span>
     <h2>Crypto & Web3</h2>
     <p>
-      Explore crypto, DeFi, blockchain and beginner friendly guides.
-      Live market data and interactive charts will be added here.
+      Explore crypto, DeFi, blockchain and Web3.
+      Real-time market data and interactive charts will be connected here.
     </p>
   </div>
+
+  <div class="crypto-grid">
+
+    <div class="crypto-coin">
+      <div class="coin-symbol">₿</div>
+      <div class="coin-info">
+        <h3>Bitcoin</h3>
+        <p>BTC</p>
+      </div>
+      <div class="coin-price">
+        <strong>$--,---</strong>
+        <span>Live soon</span>
+      </div>
+    </div>
+
+    <div class="crypto-coin">
+      <div class="coin-symbol">Ξ</div>
+      <div class="coin-info">
+        <h3>Ethereum</h3>
+        <p>ETH</p>
+      </div>
+      <div class="coin-price">
+        <strong>$--,---</strong>
+        <span>Live soon</span>
+      </div>
+    </div>
+
+    <div class="crypto-coin">
+      <div class="coin-symbol">◎</div>
+      <div class="coin-info">
+        <h3>Solana</h3>
+        <p>SOL</p>
+      </div>
+      <div class="coin-price">
+        <strong>$---</strong>
+        <span>Live soon</span>
+      </div>
+    </div>
+
+    <div class="crypto-coin">
+      <div class="coin-symbol">BNB</div>
+      <div class="coin-info">
+        <h3>BNB</h3>
+        <p>BNB</p>
+      </div>
+      <div class="coin-price">
+        <strong>$---</strong>
+        <span>Live soon</span>
+      </div>
+    </div>
+
+    <div class="crypto-coin">
+      <div class="coin-symbol">X</div>
+      <div class="coin-info">
+        <h3>XRP</h3>
+        <p>XRP</p>
+      </div>
+      <div class="coin-price">
+        <strong>$---</strong>
+        <span>Live soon</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="chart-box">
+
+    <div class="chart-top">
+      <div>
+        <small>BTC / USD</small>
+        <h3>Bitcoin Market Chart</h3>
+      </div>
+
+      <span class="chart-status">LIVE DATA</span>
+    </div>
+
+    <div class="chart-area">
+      <div class="chart-line"></div>
+      <p>Real market chart coming next...</p>
+    </div>
+
+  </div>
+
+</div>
 </section>
 
 <section id="contact">
@@ -219,6 +306,167 @@ section > div:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 35px rgba(0, 191, 255, 0.15);
 }
+  /* 🔵 Crypto Market */
+
+.crypto-card-section {
+  overflow: hidden;
+}
+
+.crypto-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.crypto-heading span {
+  color: #00bfff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.crypto-heading h2 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.crypto-heading p {
+  color: #b8c4d9;
+  line-height: 1.7;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.crypto-coin {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  border: 1px solid rgba(0,191,255,.22);
+  border-radius: 18px;
+  background: rgba(0,191,255,.04);
+  transition: .25s ease;
+}
+
+.crypto-coin:hover {
+  transform: translateY(-5px);
+  border-color: #00bfff;
+  box-shadow: 0 0 25px rgba(0,191,255,.18);
+}
+
+.coin-symbol {
+  min-width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0,191,255,.12);
+  color: #00bfff;
+  font-weight: 800;
+}
+
+.coin-info {
+  flex: 1;
+}
+
+.coin-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.coin-info p {
+  margin: 4px 0 0;
+  opacity: .55;
+  font-size: 12px;
+}
+
+.coin-price {
+  text-align: right;
+}
+
+.coin-price strong {
+  display: block;
+  font-size: 15px;
+}
+
+.coin-price span {
+  color: #00d084;
+  font-size: 11px;
+}
+
+.chart-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,191,255,.22);
+  background: rgba(0,0,0,.18);
+}
+
+.chart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.chart-top small {
+  opacity: .6;
+}
+
+.chart-top h3 {
+  margin: 5px 0 0;
+}
+
+.chart-status {
+  color: #00bfff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.chart-area {
+  height: 210px;
+  margin-top: 18px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,191,255,.025);
+}
+
+.chart-line {
+  position: absolute;
+  width: 120%;
+  height: 3px;
+  background: #00bfff;
+  transform: rotate(-7deg);
+  box-shadow: 0 0 18px rgba(0,191,255,.8);
+}
+
+.chart-area p {
+  position: relative;
+  margin-top: 80px;
+  opacity: .5;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+  .crypto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  }
 </style>
 
 <script>

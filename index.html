@@ -343,6 +343,60 @@
     gap: 10px;
   }
       }
+    /* FINAL CRYPTO FIX */
+
+.crypto-card-section .crypto-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+}
+
+.crypto-card-section .crypto-coin {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  color: white !important;
+}
+
+/* FORCE CRYPTO COLORS */
+
+.crypto-card-section .crypto-coin.btc {
+  background: linear-gradient(135deg, #f7931a, #ffb347) !important;
+}
+
+.crypto-card-section .crypto-coin.eth {
+  background: linear-gradient(135deg, #627eea, #9b8cff) !important;
+}
+
+.crypto-card-section .crypto-coin.sol {
+  background: linear-gradient(135deg, #14f195, #9945ff) !important;
+}
+
+.crypto-card-section .crypto-coin.bnb {
+  background: linear-gradient(135deg, #f3ba2f, #ffd96a) !important;
+}
+
+.crypto-card-section .crypto-coin.xrp {
+  background: linear-gradient(135deg, #111827, #4b5563) !important;
+}
+
+/* KEEP CHART AWAY FROM CARDS */
+
+.crypto-card-section .crypto-chart {
+  clear: both !important;
+  display: block !important;
+  width: 100% !important;
+  margin-top: 32px !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .crypto-card-section .crypto-grid {
+    grid-template-columns: 1fr !important;
+  }
+  }
   </style>
 </head>
 

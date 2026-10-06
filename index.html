@@ -2313,6 +2313,32 @@ header {
     letter-spacing: 1.2px;
   }
 }
+ /* ===== PORTFOLIO CAROUSEL FIX ===== */
+
+.portfolio-track {
+  position: relative;
+  width: 100%;
+}
+
+.portfolio-slide {
+  display: none !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.portfolio-slide.active {
+  display: block !important;
+}
+
+.portfolio-slide .work-item {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.portfolio-slide .work-image,
+.portfolio-slide .work-content {
+  position: relative !important;
+   }
 </style>
 
 <script>

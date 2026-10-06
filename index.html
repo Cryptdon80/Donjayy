@@ -421,7 +421,10 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
 <body>
 
 <header>
+<div class="brand">
+  <img src="5X1DlH3I%20(1).jpg" alt="DoNjayy">
   <div class="logo">DoNjayy</div>
+</div>
 
   <nav class="main-nav">
     <a href="#home">Home</a>
@@ -439,8 +442,6 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
   </a>
 </header>
 <div class="hero" id="home">
-
-  <img src="5X1DlH3I%20(1).jpg" alt="DoNjayy">
 
 <div class="hero-badge">AI • WEB3 • CONTENT • DEVELOPMENT</div>
 
@@ -607,7 +608,9 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
   <div class="crypto-grid">
 
     <div class="crypto-coin btc">
-      <div class="coin-symbol">₿</div>
+      <div class="coin-symbol">
+  <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="Bitcoin">
+      </div>
       <div class="coin-info">
         <h3>Bitcoin</h3>
         <p>BTC</p>
@@ -619,7 +622,9 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     </div>
 
     <div class="crypto-coin eth">
-      <div class="coin-symbol">Ξ</div>
+      <div class="coin-symbol">
+  <img src="https://assets.coingecko.com/coins/images/279/large/ethereum.png" alt="Ethereum">
+      </div>
       <div class="coin-info">
         <h3>Ethereum</h3>
         <p>ETH</p>
@@ -631,7 +636,9 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     </div>
 
     <div class="crypto-coin sol">
-      <div class="coin-symbol">◎</div>
+<div class="coin-symbol">
+  <img src="https://assets.coingecko.com/coins/images/4128/large/solana.png" alt="Solana">
+</div>
       <div class="coin-info">
         <h3>Solana</h3>
         <p>SOL</p>
@@ -643,7 +650,9 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     </div>
 
     <div class="crypto-coin bnb">
-      <div class="coin-symbol">◆</div>
+      <div class="coin-symbol">
+  <img src="https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png" alt="BNB">
+</div>
       <div class="coin-info">
         <h3>BNB</h3>
         <p>BNB</p>
@@ -655,7 +664,9 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     </div>
 
     <div class="crypto-coin xrp">
-      <div class="coin-symbol">✕</div>
+      <div class="coin-symbol">
+  <img src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png" alt="XRP">
+</div>
       <div class="coin-info">
         <h3>XRP</h3>
         <p>XRP</p>
@@ -2091,7 +2102,20 @@ header {
   .logo {
     font-size: 22px;
   }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
 
+.brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #00d9ff;
+  box-shadow: 0 0 14px rgba(0,217,255,0.45);
+ }
   .nav-hire {
     padding: 9px 14px;
     font-size: 12px;

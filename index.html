@@ -448,6 +448,32 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     <a class="btn" href="#portfolio">View My Work</a>
     <a class="btn" href="mailto:stillj046@gmail.com">Let's Work Together</a>
 </div>
+ <div class="tech-marquee">
+  <div class="tech-marquee-track">
+
+    <span>✦ AI</span>
+    <span>◈ WEB3</span>
+    <span>◇ DEFI</span>
+    <span>⬡ SMART CONTRACTS</span>
+    <span>◆ SOLIDITY</span>
+    <span>⚡ VITE</span>
+    <span>◉ GITHUB</span>
+    <span>✦ CHATGPT</span>
+    <span>◇ FIGMA</span>
+    <span>◈ NOTION</span>
+
+    <span>✦ AI</span>
+    <span>◈ WEB3</span>
+    <span>◇ DEFI</span>
+    <span>⬡ SMART CONTRACTS</span>
+    <span>◆ SOLIDITY</span>
+    <span>⚡ VITE</span>
+    <span>◉ GITHUB</span>
+    <span>✦ CHATGPT</span>
+    <span>◇ FIGMA</span>
+    <span>◈ NOTION</span>
+
+  </div>
 </div>
 <section id="about">
 <div class="card about-card" id="about">
@@ -2029,6 +2055,80 @@ header {
   }
 
 }
+ /* ===== DO NJAYY SIDEWAYS TECH MARQUEE ===== */
+
+.hero {
+  position: relative;
+}
+
+.tech-marquee {
+  width: 100%;
+  margin-top: 55px;
+  overflow: hidden;
+  border-top: 1px solid rgba(0,217,255,0.12);
+  border-bottom: 1px solid rgba(0,217,255,0.12);
+  padding: 15px 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 42px;
+  animation: techMarquee 25s linear infinite;
+}
+
+.tech-marquee span {
+  color: #7894ad;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.tech-marquee span:hover {
+  color: #00d9ff;
+  text-shadow: 0 0 15px rgba(0,217,255,0.7);
+}
+
+@keyframes techMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 700px) {
+  .tech-marquee {
+    margin-top: 40px;
+    padding: 13px 0;
+  }
+
+  .tech-marquee-track {
+    gap: 30px;
+    animation-duration: 22s;
+  }
+
+  .tech-marquee span {
+    font-size: 11px;
+  }
+ }
 </style>
 
 <script>

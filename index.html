@@ -2313,6 +2313,148 @@ header {
     letter-spacing: 1.2px;
   }
 }
+ /* ===== PORTFOLIO ===== */
+
+.portfolio-carousel {
+  position: relative;
+  width: 100%;
+  padding: 0 45px;
+}
+
+.portfolio-track {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+}
+
+.portfolio-slide {
+  display: none;
+  width: 100%;
+}
+
+.portfolio-slide.active {
+  display: block;
+}
+
+.work-item {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(0, 217, 255, 0.22);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #020817, #061b31);
+  box-shadow: 0 0 30px rgba(0, 120, 255, 0.10);
+}
+
+.work-image {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+}
+
+.work-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.work-content {
+  padding: 28px;
+}
+
+.work-number {
+  color: #00d9ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.work-content h3 {
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.work-content p {
+  color: #9fb3c8;
+  line-height: 1.7;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.work-tags span {
+  padding: 7px 10px;
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 20px;
+  color: #00d9ff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 180px;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(0, 217, 255, 0.35);
+  border-radius: 50%;
+  background: #020817;
+  color: #ffffff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+@media (max-width: 700px) {
+
+  .portfolio-carousel {
+    padding: 0 12px;
+  }
+
+  .portfolio-track {
+    min-height: 690px;
+  }
+
+  .work-image {
+    height: 300px;
+  }
+
+  .work-content {
+    padding: 24px;
+  }
+
+  .work-content h3 {
+    font-size: 22px;
+  }
+
+  .carousel-arrow {
+    top: 130px;
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .carousel-prev {
+    left: 4px;
+  }
+
+  .carousel-next {
+    right: 4px;
+  }
+ }
 </style>
 
 <script>
@@ -2517,31 +2659,30 @@ prevButton.addEventListener('click', () => {
 showSlide(currentSlide);
  </script>
  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".portfolio-slide");
-  const nextBtn = document.querySelector(".carousel-next");
-  const prevBtn = document.querySelector(".carousel-prev");
+<script>
+const slides = document.querySelectorAll(".portfolio-slide");
+const next = document.querySelector(".carousel-next");
+const prev = document.querySelector(".carousel-prev");
 
-  let current = 0;
+let current = 0;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-    });
-  }
-
-  nextBtn.addEventListener("click", function () {
-    current = (current + 1) % slides.length;
-    showSlide(current);
+function showSlide(i) {
+  slides.forEach((slide, index) => {
+    slide.classList.toggle("active", index === i);
   });
+}
 
-  prevBtn.addEventListener("click", function () {
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-  });
-
+next.onclick = () => {
+  current = (current + 1) % slides.length;
   showSlide(current);
-});
- </script>
+};
+
+prev.onclick = () => {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+};
+
+showSlide(0);
+</script>
 </body>
 </html>

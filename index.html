@@ -2658,31 +2658,38 @@ prevButton.addEventListener('click', () => {
 
 showSlide(currentSlide);
  </script>
- <script>
 <script>
-const slides = document.querySelectorAll(".portfolio-slide");
-const next = document.querySelector(".carousel-next");
-const prev = document.querySelector(".carousel-prev");
+const slides = document.querySelectorAll('.portfolio-slide');
+const nextButton = document.querySelector('.carousel-next');
+const prevButton = document.querySelector('.carousel-prev');
 
-let current = 0;
+let currentSlide = 0;
 
-function showSlide(i) {
-  slides.forEach((slide, index) => {
-    slide.classList.toggle("active", index === i);
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active', 'previous');
+
+    if (i === index) {
+      slide.classList.add('active');
+    }
+
+    if (i === (index - 1 + slides.length) % slides.length) {
+      slide.classList.add('previous');
+    }
   });
 }
 
-next.onclick = () => {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-};
+nextButton.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
 
-prev.onclick = () => {
-  current = (current - 1 + slides.length) % slides.length;
-  showSlide(current);
-};
+prevButton.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
 
-showSlide(0);
+showSlide(currentSlide);
 </script>
 </body>
 </html>

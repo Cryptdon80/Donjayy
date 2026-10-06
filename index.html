@@ -409,107 +409,10 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     grid-template-columns: 1fr !important;
   }
   }
- /* ===== THEME TOGGLE ===== */
-
-.theme-toggle {
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(0, 217, 255, 0.35);
-  border-radius: 50%;
-  background: #020817;
-  color: #00d9ff;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.25s ease;
-}
-
-.theme-toggle:hover {
-  background: #00d9ff;
-  color: #020817;
-  transform: scale(1.08);
 }
  .nav-hire {
   margin-left: auto !important;
   margin-right: 10px !important;
-}
-
-.theme-toggle {
-  flex-shrink: 0;
-}
-
-body.light-mode .theme-toggle {
-  background: #ffffff;
-  color: #0077ff;
-  border-color: rgba(0, 120, 255, 0.25);
-}
- /* ===== LIGHT MODE ===== */
-
-body.light-mode {
-  background: #f5f9ff;
-  color: #07111f;
-}
-
-body.light-mode header {
-  background: #ffffff;
-  border-bottom-color: rgba(0, 120, 255, 0.15);
-}
-
-body.light-mode .logo {
-  color: #0077ff;
-}
-
-body.light-mode section {
-  color: #07111f;
-}
-
-body.light-mode .card,
-body.light-mode .work-item,
-body.light-mode .crypto-card-section,
-body.light-mode .guide-item {
-  background: #ffffff;
-  color: #07111f;
-  border-color: rgba(0, 120, 255, 0.18);
-}
-
-body.light-mode .main-nav {
-  background: #eef6ff;
-  border-color: rgba(0, 120, 255, 0.18);
-}
-
-body.light-mode .main-nav a {
-  color: #26364a;
-}
-
-body.light-mode .main-nav a.active,
-body.light-mode .main-nav a:hover {
-  color: #0077ff;
-  background: rgba(0, 120, 255, 0.10);
-}
-
-body.light-mode .work-item h3,
-body.light-mode .crypto-heading h2 {
-  color: #07111f;
-}
-
-body.light-mode .work-item p,
-body.light-mode .crypto-heading p {
-  color: #52657a;
-}
-
-body.light-mode .crypto-chart {
-  background: #ffffff !important;
-}
-
-body.light-mode footer {
-  color: #52657a;
-}
-
-body.light-mode .social-links a {
-  background: #ffffff;
-  color: #07111f;
 }
   </style>
 </head>
@@ -536,8 +439,6 @@ body.light-mode .social-links a {
   <a class="nav-hire" href="mailto:stillj046@gmail.com">
     Hire Me
   </a>
- <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
-  ☀️
  </button>
 </header>
 <div class="hero" id="home">
@@ -2817,34 +2718,6 @@ prevButton.addEventListener('click', () => {
 });
 
 showSlide(currentSlide);
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const themeToggle = document.getElementById("theme-toggle");
-
-  if (!themeToggle) return;
-
-  if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-mode");
-    themeToggle.textContent = "🌙";
-  } else {
-    themeToggle.textContent = "☀️";
-  }
-
-  themeToggle.addEventListener("click", function () {
-    document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-      themeToggle.textContent = "🌙";
-      localStorage.setItem("theme", "light");
-    } else {
-      themeToggle.textContent = "☀️";
-      localStorage.setItem("theme", "dark");
-    }
-  });
-
-});
  </script>
 </body>
 </html>

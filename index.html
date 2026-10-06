@@ -850,18 +850,72 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
     <a class="btn" href="mailto:stillj046@gmail.com">
       Hire DoNjayy
     </a>
-   <div class="social-links">
-  <a href="https://x.com/Altjayy_" target="_blank">X</a>
-  <a href="https://t.me/cryptdon80" target="_blank">Telegram</a>
-  <span>Discord: crypt_don</span>
-   </div>
+  
   </div>
 
 </section>
 <footer>
   © 2026 DoNjayy — Web3 & AI Creator
 </footer>
+<div class="social-links">
+  <a href="https://x.com/Altjayy_" target="_blank" aria-label="X">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.965 6.817H1.681l7.73-8.835L1.255 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+    </svg>
+  </a>
+
+  <a href="https://t.me/cryptdon80" target="_blank" aria-label="Telegram">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M21.5 3.5 18.1 20c-.25 1.17-.9 1.46-1.83.91l-5.03-3.71-2.43 2.34c-.27.27-.5.5-1.03.5l.37-5.14 9.36-8.46c.41-.37-.09-.58-.64-.21L5.32 13.1.42 11.57c-1.07-.33-1.09-1.07.22-1.58L19.78 2.7c.88-.33 1.65.21 1.72.8Z"/>
+    </svg>
+  </a>
+
+  <span class="discord-link" aria-label="Discord">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19.54 5.01A16.6 16.6 0 0 0 15.5 3.75l-.49 1.02a15.2 15.2 0 0 0-6.02 0L8.5 3.75a16.6 16.6 0 0 0-4.04 1.26C1.9 8.82 1.21 12.52 1.55 16.17a16.5 16.5 0 0 0 4.96 2.51l1.2-1.63a10.7 10.7 0 0 1-1.89-.91l.46-.35c3.65 1.7 7.6 1.7 11.2 0l.47.35c-.6.36-1.24.67-1.9.91l1.2 1.63a16.5 16.5 0 0 0 4.96-2.51c.4-4.25-.68-7.91-2.67-11.16ZM8.63 14.09c-1.1 0-2-.98-2-2.18s.88-2.18 2-2.18c1.11 0 2 0.98 2 2.18s-.89 2.18-2 2.18Zm6.74 0c-1.11 0-2-.98-2-2.18s.89-2.18 2-2.18c1.12 0 2 .98 2 2.18s-.88 2.18-2 2.18Z"/>
+    </svg>
+  </span>
+</div>
+
 <style>
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin: 18px 0 28px;
+}
+
+.social-links a,
+.social-links .discord-link {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 50%;
+  background: #020817;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-links a:hover,
+.social-links .discord-link:hover {
+  color: #00d9ff;
+  border-color: #00d9ff;
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+  transform: translateY(-3px);
+}
+
 /* 🔵 DoNjayy Bubble Effects */
 
 button, a {

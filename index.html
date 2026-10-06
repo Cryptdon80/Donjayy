@@ -2313,32 +2313,6 @@ header {
     letter-spacing: 1.2px;
   }
 }
- /* ===== PORTFOLIO CAROUSEL FIX ===== */
-
-.portfolio-track {
-  position: relative;
-  width: 100%;
-}
-
-.portfolio-slide {
-  display: none !important;
-  position: relative !important;
-  width: 100% !important;
-}
-
-.portfolio-slide.active {
-  display: block !important;
-}
-
-.portfolio-slide .work-item {
-  position: relative !important;
-  width: 100% !important;
-}
-
-.portfolio-slide .work-image,
-.portfolio-slide .work-content {
-  position: relative !important;
-   }
 </style>
 
 <script>
@@ -2541,6 +2515,33 @@ prevButton.addEventListener('click', () => {
 });
 
 showSlide(currentSlide);
+ </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".portfolio-slide");
+  const nextBtn = document.querySelector(".carousel-next");
+  const prevBtn = document.querySelector(".carousel-prev");
+
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  nextBtn.addEventListener("click", function () {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+
+  prevBtn.addEventListener("click", function () {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  showSlide(current);
+});
  </script>
 </body>
 </html>

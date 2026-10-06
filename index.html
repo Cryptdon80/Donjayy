@@ -2266,39 +2266,38 @@ header {
     change: "xrp-change"
   }
 };
-
 async function loadCryptoPrices() {
   try {
     const response = await fetch(
-      "https://api.binance.com/api/v3/ticker/24hr?symbols=%5B%22BTCUSDT%22,%22ETHUSDT%22,%22SOLUSDT%22,%22BNBUSDT%22,%22XRPUSDT%22%5D"
+      "https://api.coinpaprika.com/v1/tickers?quotes=USD"
     );
 
     const data = await response.json();
 
     const map = {
-      BTCUSDT: ["btc-price", "btc-change"],
-      ETHUSDT: ["eth-price", "eth-change"],
-      SOLUSDT: ["sol-price", "sol-change"],
-      BNBUSDT: ["bnb-price", "bnb-change"],
-      XRPUSDT: ["xrp-price", "xrp-change"]
+      "btc-bitcoin": ["btc-price", "btc-change"],
+      "eth-ethereum": ["eth-price", "eth-change"],
+      "sol-solana": ["sol-price", "sol-change"],
+      "bnb-binance-coin": ["bnb-price", "bnb-change"],
+      "xrp-xrp": ["xrp-price", "xrp-change"]
     };
 
     data.forEach(coin => {
-      const ids = map[coin.symbol];
+      const ids = map[coin.id];
       if (!ids) return;
 
       const price = document.getElementById(ids[0]);
       const change = document.getElementById(ids[1]);
 
-      if (price) {
+      if (price && coin.quotes && coin.quotes.USD) {
         price.textContent =
-          "$" + Number(coin.lastPrice).toLocaleString(undefined, {
+          "$" + Number(coin.quotes.USD.price).toLocaleString(undefined, {
             maximumFractionDigits: 2
           });
       }
 
-      if (change) {
-        const percent = Number(coin.priceChangePercent);
+      if (change && coin.quotes && coin.quotes.USD) {
+        const percent = Number(coin.quotes.USD.percent_change_24h || 0);
 
         change.textContent =
           (percent >= 0 ? "▲ " : "▼ ") +
@@ -2310,10 +2309,22 @@ async function loadCryptoPrices() {
       }
     });
 
+    document.querySelectorAll(".coin-symbol img").forEach(img => {
+      img.style.width = "42px";
+      img.style.height = "42px";
+      img.style.maxWidth = "42px";
+      img.style.maxHeight = "42px";
+      img.style.objectFit = "contain";
+      img.style.display = "block";
+      img.style.borderRadius = "50%";
+      img.style.padding = "3px";
+      img.style.margin = "0 auto";
+    });
+
   } catch (error) {
     console.log("Crypto price error:", error);
   }
- }
+}
 
 loadCryptoPrices();
 

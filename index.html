@@ -426,6 +426,14 @@ box-shadow: 0 0 14px rgba(0,217,255,0.25);
   color: #020817;
   transform: scale(1.08);
 }
+ .nav-hire {
+  margin-left: auto !important;
+  margin-right: 10px !important;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+}
 
 body.light-mode .theme-toggle {
   background: #ffffff;
@@ -2805,22 +2813,32 @@ prevButton.addEventListener('click', () => {
 
 showSlide(currentSlide);
 </script>
- <script>
-const themeToggle = document.getElementById("theme-toggle");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
-  themeToggle.textContent = "🌙";
-}
+  const themeToggle = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
+  if (!themeToggle) return;
 
-  const isLight = document.body.classList.contains("light-mode");
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    themeToggle.textContent = "🌙";
+  } else {
+    themeToggle.textContent = "☀️";
+  }
 
-  themeToggle.textContent = isLight ? "🌙" : "☀️";
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("light-mode");
 
-  localStorage.setItem("theme", isLight ? "light" : "dark");
+    if (document.body.classList.contains("light-mode")) {
+      themeToggle.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    } else {
+      themeToggle.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
 });
  </script>
 </body>

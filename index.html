@@ -2062,27 +2062,39 @@ header {
 }
 
 .tech-marquee {
-  width: 100%;
-  margin-top: 55px;
+  position: relative;
+  width: 110%;
+  margin-left: -5%;
+  margin-top: 65px;
   overflow: hidden;
-  border-top: 1px solid rgba(0,217,255,0.12);
-  border-bottom: 1px solid rgba(0,217,255,0.12);
-  padding: 15px 0;
+  padding: 22px 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 140, 255, 0.10),
+      rgba(0, 0, 0, 0) 65%
+    );
+
+  border-top: 1px solid rgba(0,217,255,0.10);
+  border-bottom: 1px solid rgba(0,217,255,0.10);
+
   mask-image: linear-gradient(
     to right,
     transparent,
-    black 8%,
-    black 92%,
+    black 10%,
+    black 90%,
     transparent
   );
+
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
-    black 8%,
-    black 92%,
+    black 10%,
+    black 90%,
     transparent
   );
-}
+ }
 
 .tech-marquee-track {
   display: flex;
@@ -2116,19 +2128,29 @@ header {
 
 @media (max-width: 700px) {
   .tech-marquee {
-    margin-top: 40px;
-    padding: 13px 0;
+    width: 115%;
+    margin-left: -7.5%;
+    margin-top: 55px;
+    padding: 20px 0;
+
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(0, 140, 255, 0.12),
+        transparent 70%
+      );
   }
 
   .tech-marquee-track {
-    gap: 30px;
+    gap: 38px;
     animation-duration: 22s;
   }
 
   .tech-marquee span {
-    font-size: 11px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
   }
- }
+}
 </style>
 
 <script>

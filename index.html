@@ -2328,13 +2328,30 @@ header {
 }
 
 .portfolio-slide {
-  display: none;
-  width: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(90px) scale(0.88);
+    z-index: 1;
+    pointer-events: none;
+    transition:
+        transform 0.55s ease,
+        opacity 0.55s ease;
 }
 
 .portfolio-slide.active {
-  display: block;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    pointer-events: auto;
 }
+
+.portfolio-slide.previous {
+    opacity: 0.45;
+    transform: translateX(-70px) scale(0.90);
+    z-index: 2;
+ }
 
 .work-item {
   width: 100%;
